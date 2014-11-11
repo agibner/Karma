@@ -1,9 +1,15 @@
+import java.util._;
+
 class KarmaExecuter {
 	
+	var stack:Stack[String];
+	var deque:ArrayDeque[String];
 	var program:Program;
   
 	def main(args: Array[String]) {
 		program = new Program(args(0));
+		stack = new Stack();
+		deque = new ArrayDeque();
 		var char:Char = program.getNext;
 		while (char != '\n') {
 			try {
@@ -15,6 +21,8 @@ class KarmaExecuter {
 		}
 	}
 	
+	// This is where all new code should be made
+	// This is what reads the char and determines what to do.
 	def execute(char:Char) {
 		
 	}
