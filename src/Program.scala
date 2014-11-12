@@ -1,8 +1,8 @@
 class Program {
 	
-	var codeArray:Array[Array[Char]];
-	var linePositions:Array[Int];
-	var currentLine:Int;
+	var codeArray:Array[Array[Char]] = _;
+	var linePositions:Array[Int] = _;
+	var currentLine:Int = _;
 
 	def this(code:String) {
 		this();

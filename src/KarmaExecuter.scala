@@ -2,9 +2,9 @@ import java.util._;
 
 class KarmaExecuter {
 	
-	var stack:Stack[String];
-	var deque:ArrayDeque[String];
-	var program:Program;
+	var stack:Stack[String] = _;
+	var deque:ArrayDeque[String] = _;
+	var program:Program =  _;
   
 	def main(args: Array[String]) {
 		program = new Program(args(0));
