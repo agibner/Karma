@@ -4,10 +4,17 @@ class Program {
 	var linePositions:Array[Int] = _;
 	var currentLine:Int = _;
 
-	def this(code:String) {
+	/*def this(code:String) {
 		this();
 		var stringArray:Array[String] = code.split('\n');
 		codeArray = stringArray.transpose[Char]((s) => s.toCharArray());
+		linePositions = Array.fill(codeArray.size)(0);
+		currentLine = 0;
+	}*/
+	def this(stringArray:Array[String]) {
+		this();
+		//var stringArray:Array[String] = code.split('\n');
+		codeArray = stringArray.map[Array[Char],Array[Array[Char]]](s => s.toCharArray());
 		linePositions = Array.fill(codeArray.size)(0);
 		currentLine = 0;
 	}
@@ -26,6 +33,12 @@ class Program {
 		currentLine += 1;
 		if (currentLine==linePositions.size)
 			throw new OutOfRangeException(false,currentLine,linePositions(currentLine) - 1);
+	}
+	
+	def skipNext {
+		if (codeArray(currentLine).size != linePositions(currentLine)) {
+			linePositions(currentLine) += 1;
+		}
 	}
 	
 	def getNext:Char = {

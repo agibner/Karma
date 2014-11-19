@@ -1,13 +1,13 @@
 import java.util._;
 
-class KarmaExecuter {
+object KarmaExecuter {
 	
-	var stack:Stack[String] = _;
-	var deque:ArrayDeque[String] = _;
+	var stack:Stack[Int] = _;
+	var deque:ArrayDeque[Int] = _;
 	var program:Program =  _;
   
 	def main(args: Array[String]) {
-		program = new Program(args(0));
+		program = new Program(args);
 		stack = new Stack();
 		deque = new ArrayDeque();
 		var char:Char = program.getNext;
@@ -24,6 +24,34 @@ class KarmaExecuter {
 	// This is where all new code should be made
 	// This is what reads the char and determines what to do.
 	def execute(char:Char) {
-		
+		char match {
+		  case '+' => stack.push(stack.pop() + stack.pop());
+		  case '-' => stack.push(stack.pop() - stack.pop());
+		  case '*' => stack.push(stack.pop() * stack.pop());
+		  case '/' => stack.push(stack.pop() / stack.pop());
+		  case '%' => stack.push(stack.pop() % stack.pop());
+		  case '&' => stack.push(stack.pop() & stack.pop());
+		  case '|' => stack.push(stack.pop() | stack.pop());
+		  case '^' => stack.push(stack.pop() ^ stack.pop());
+		  case '~' => stack.push(~stack.pop());
+		  case '!' => stack.push(if (stack.pop()==1) 0 else 1);
+		  case '=' => stack.push(if (stack.peek() == deque.peekFirst()) 1 else 0);
+		  case '>' => stack.push(if (stack.peek() > deque.peekFirst()) 1 else 0);
+		  case '@' => if (stack.peek() != 1) program.skipNext;
+		  case x:Char if (x>='0' && x<='9') => stack.push(x - '0');
+		  case '}' => deque.addFirst(stack.pop());
+		  case '{' => stack.push(deque.removeFirst());
+		  case '[' => deque.addLast(stack.pop());
+		  case ']' => stack.push(deque.removeLast());
+		  case '#' => stack.pop();
+		  case '\\' => stack.push(stack.peek());
+		  case '?' => stack.push(scala.io.StdIn.readChar());
+		  case ':' => System.out.print(stack.pop().toChar);
+		  case ';' => System.out.print(stack.pop());
+		  case ',' => program.moveDown; program.moveToFront;
+		  case '.' => program.moveDown;
+		  case ''' => program.moveUp;
+		  case '<' => program.moveToFront;
+		}
 	}
 }
