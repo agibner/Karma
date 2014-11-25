@@ -34,10 +34,10 @@ object KarmaExecuter {
 		  case '|' => stack.push(stack.pop() | stack.pop());
 		  case '^' => stack.push(stack.pop() ^ stack.pop());
 		  case '~' => stack.push(~stack.pop());
-		  case '!' => stack.push(if (stack.pop()==1) 0 else 1);
-		  case '=' => stack.push(if (stack.peek() == deque.peekFirst()) 1 else 0);
-		  case '>' => stack.push(if (stack.peek() > deque.peekFirst()) 1 else 0);
-		  case '@' => if (stack.peek() != 1) program.skipNext;
+		  case '!' => stack.push(if (stack.pop()==0) 1 else 0);
+		  case '=' => stack.push(if (stack.pop() == deque.peekFirst()) 1 else 0);
+		  case '>' => stack.push(if (stack.pop() > deque.peekFirst()) 1 else 0);
+		  case '@' => if (stack.pop() != 1) program.skipNext;
 		  case x:Char if (x>='0' && x<='9') => stack.push(x - '0');
 		  case '}' => deque.addFirst(stack.pop());
 		  case '{' => stack.push(deque.removeFirst());

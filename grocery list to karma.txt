@@ -1,0 +1,37 @@
+start of program -> 0[1,
+
+front of every line (except for l) -> \1+!(ASCII value)}[2+]@,[2]-{#\!@'[1]-\!@,#
+
+end of every line (except for h,j,k,t,v) -> 1,<
+
+keep size of stack at end of deque 
+	 action					update stack size
+a -> {{+}							1]-[
+b -> {[						
+c -> {\}}							1]+[
+d -> {[{]/}							1]-[
+e -> 0{!@'1,						1]-[
+f -> {[{]}}					
+g -> {>[}]}							1]-[
+h -> 67+2*>\[[}]\{{]@-}!@#[1]@<{$	1]-[
+i -> ?}								1]+[
+j -> {,<							1]-[
+k -> ]\[![1]@,\@<]-[{#1<
+l -> \!@![1]-\!@,#					1]-[
+m -> {{*}							1]-[
+n -> %}								1]+[
+o -> {;								1]-[
+p -> {:								1]-[
+q -> 	
+r -> {\[[{\]/*]-}					1]-[
+s -> {[{]-}							1]-[
+t -> 
+u -> {[
+v -> 10-,							1]+[
+w -> 554**}							1]+[
+x -> {#
+y -> ????????????
+z -> {!}
+
+% -> push number of letters in item
+$ -> pop, execute that instruction
