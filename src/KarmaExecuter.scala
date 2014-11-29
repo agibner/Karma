@@ -10,7 +10,7 @@ object KarmaExecuter {
 		program = new Program(args);
 		stack = new Stack();
 		deque = new ArrayDeque();
-		var char:Char = program.getNext;
+		var char:Char = program.nextChar;
 		while (char != '\n') {
 			try {
 				execute(char);
