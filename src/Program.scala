@@ -11,6 +11,7 @@ class Program {
 		linePositions = Array.fill(codeArray.size)(0);
 		currentLine = 0;
 	}*/
+
 	def this(stringArray:Array[String]) {
 		this();
 		//var stringArray:Array[String] = code.split('\n');
@@ -35,13 +36,13 @@ class Program {
 			throw new OutOfRangeException(false,currentLine,linePositions(currentLine) - 1);
 	}
 	
-	def skipNext {
+	def skipNextChar {
 		if (codeArray(currentLine).size != linePositions(currentLine)) {
 			linePositions(currentLine) += 1;
 		}
 	}
 	
-	def getNext:Char = {
+	def nextChar:Char = {
 		if (codeArray(currentLine).size == linePositions(currentLine)) '\n';
 		else {
 			var a:Char = codeArray(currentLine)(linePositions(currentLine));
@@ -49,4 +50,11 @@ class Program {
 			a
 		}
 	}
+
+    def nextLine:Array[Char] = {
+    	moveDown; 
+    	var line:Array[Char] = codeArray(currentLine);
+    	line
+
+    }
 }
