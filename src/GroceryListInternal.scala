@@ -19,6 +19,7 @@ class GroceryListInternal {
 
   var lines = new HashMap[Int, GroceryLine]
   var stack = new Stack[Int];
+  var helperstack = new Stack[Int]
   val loopBegLines = new Stack[Int]
   val pcStack = new Stack[Int]
   val returnStack = new Stack[Any]
@@ -34,6 +35,7 @@ class GroceryListInternal {
   def GROCERY_LIST() = {
     lines = new HashMap[Int, GroceryLine]
     stack = new Stack[Int];
+    helperstack = new Stack[Int]; 
   }
 
   // evaluate
@@ -282,6 +284,133 @@ class GroceryListInternal {
 	      current += 1
 	    }
 	 }
+
+   object Bananas {
+    def apply(s: Symbol) = {
+        System.out.println("Hey"); 
+        current += 1
+      }
+   }
+
+   object Chicken {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+   }
+
+   object Dumplings{
+    def apply(s: Symbol) = {
+        current += 1
+      }
+   }
+
+  object Eggs {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Fruit {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Gruyere {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Ham {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Ibuprofen {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+  object Juice {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Lettuce {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Milk {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Noodles {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Oatmeal {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Pasta {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Rice {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Sriracha {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Turkey {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Utensils {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Veggies {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Xanax {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
+  object Zucchini {
+    def apply(s: Symbol) = {
+        current += 1
+      }
+  }
+
 //  object GIMMEH {
 //    def apply(s: Symbol) = {
 //      lines(current) = ReadString(current, s)
