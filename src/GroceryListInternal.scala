@@ -1,3 +1,4 @@
+package groceryinternal
 
 import scala.collection.mutable.{ HashMap, Stack }
 import scala.util.Random
@@ -275,6 +276,10 @@ class GroceryListInternal {
 //  }
 
 	 //example
+   object Market{
+    // How you title a program? 
+   }
+
 	 object Apples {
 	    def apply(s: Symbol) = {
 	      //so we should translate this into a Karma document
