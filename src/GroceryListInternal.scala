@@ -78,7 +78,7 @@ class GroceryListInternal {
     }
   }
 // infix operators
-  implicit def operator_any(i: Any) = new {
+//  implicit def operator_any(i: Any) = new {
 //
 // our language doesn't support any operators like these dont think
 //    def Up(j: Any): Function0[Any] = {
@@ -290,12 +290,12 @@ class GroceryListInternal {
 	    }
 	 }
 
-   object Bananas {
-    def apply(s: Symbol) = {
+   //object Bananas {
+    def Bananas() = {
         System.out.println("Hey"); 
         current += 1
       }
-   }
+   //}
 
    object Chicken {
     def apply(s: Symbol) = {
@@ -536,7 +536,7 @@ class GroceryListInternal {
 //      lines(current) = FuncCallReturn(funcName, variable)
 //      current += 1
 //    }
-  }
+//  }
 
   class Bindings {
     val bindingsStack = Stack[HashMap[Symbol, Any]]()
