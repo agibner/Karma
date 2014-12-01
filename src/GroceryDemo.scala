@@ -4,7 +4,7 @@ object GroceryDemo extends GroceryListInternal{
   def main(args: Array[String]){
     GROCERY_LIST
     Watermelon
-    Noodles 2
+    Noodles - 12
     Apples 
     Pasta
     Turkey

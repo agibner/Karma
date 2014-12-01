@@ -93,12 +93,12 @@ class GroceryListInternal {
 	  current += 1
 	  }
 	
-//	object Noodles {
-		def Noodles(n: Int) = {
+	object Noodles {
+		def -(n: Int) = {
 		  karmaString += GroceryListCompiler.convert('N',n);
 		  current += 1
 		}
-//	}	
+  	}	
 	
 	def Oatmeal() = {
 	  karmaString += GroceryListCompiler.convert('O',7);
