@@ -28,10 +28,9 @@ object GroceryListCompiler {
 			try {
 				System.out.println(elem);
 
-				var start:Char = Character.toUpperCase(elem.charAt(0))
 				var length:Int = elem.length;
 
-				execute(elem.charAt(0), start, length);
+				execute(elem.charAt(0), length);
 			} catch {
 			  case e : OutOfRangeException => System.out.println(e);
 			} 
@@ -41,8 +40,8 @@ object GroceryListCompiler {
 	
 	// This is where all new code should be made
 	// This is what reads the char and determines what to do.
-	def execute(char:Char, upperChar:Char, length:Int) {
-		upperChar match {
+	def execute(char:Char, length:Int) {
+		Character.toUpperCase(char) match {
 		  case 'A' => 	compiledProgram += startOfLine(char) + "{{+}" + decreaseDequeEnd + endOfLine
 		  case 'B' =>  	compiledProgram += startOfLine(char) + "{[" + endOfLine
 		  case 'C' => 	compiledProgram += startOfLine(char) + "{\\}}" + increaseDequeEnd  + endOfLine
@@ -69,6 +68,37 @@ object GroceryListCompiler {
 		  case 'X' => 	compiledProgram += startOfLine(char) + "{#" + endOfLine
 		  case 'Y' =>	// No
 		  case 'Z' =>	compiledProgram += startOfLine + "{!}" + endOfLine
+		}
+	}
+	
+	def convert(char:Char, length:Int):String = {
+		return Character.toUpperCase(char) match {
+		  case 'A' => 	startOfLine(char) + "{{+}" + decreaseDequeEnd + endOfLine
+		  case 'B' =>  	startOfLine(char) + "{[" + endOfLine
+		  case 'C' => 	startOfLine(char) + "{\\}}" + increaseDequeEnd  + endOfLine
+		  case 'D' => 	startOfLine(char) + "{[{]/}" + decreaseDequeEnd + endOfLine
+		  case 'E' => 	startOfLine(char) + "0{!@'1," + decreaseDequeEnd + endOfLine
+		  case 'F' => 	startOfLine(char) + "{[{]}}" + endOfLine
+		  case 'G' => 	startOfLine(char) + "{>[}]}" + decreaseDequeEnd + endOfLine
+		  case 'H' => 	""// No compiledProgram += startOfLine + "67+2*>\\[[}]\\{{]@-}!@#[1]@<{$FINISH" + decreaseDequeEnd
+		  case 'I' => 	startOfLine(char) + "?}" + increaseDequeEnd  + endOfLine
+		  case 'J' => 	startOfLine(char) + "{,<" + decreaseDequeEnd
+		  case 'K' => 	startOfLine(char) + "]\\[![1]@,\\@<]-[{#1<" 
+		  case 'L' => 	"\\!@![1]-\\!@,#" + decreaseDequeEnd + endOfLine
+		  case 'M' => 	startOfLine(char) + "{{*}" + decreaseDequeEnd + endOfLine
+		  case 'N' => 	startOfLine(char) + numberToStack(length) + "}" + increaseDequeEnd  + endOfLine
+		  case 'O' => 	startOfLine(char) + "{;" + decreaseDequeEnd + endOfLine
+		  case 'P' => 	startOfLine(char) + "{:" + decreaseDequeEnd + endOfLine
+		  case 'Q' => 	startOfLine(char) + endOfLine
+		  case 'R' => 	startOfLine(char) + "{\\[[{\\]/*]-}" + decreaseDequeEnd + endOfLine
+		  case 'S' => 	startOfLine(char) + "{[{]-}" + decreaseDequeEnd + endOfLine
+		  case 'T' => 	startOfLine(char)
+		  case 'U' => 	startOfLine(char) + "]{[[" + endOfLine
+		  case 'V' => 	startOfLine(char) + "10-," + increaseDequeEnd 
+		  case 'W' => 	startOfLine(char) + "554**}" + increaseDequeEnd  + endOfLine
+		  case 'X' => 	startOfLine(char) + "{#" + endOfLine
+		  case 'Y' =>	"" // No
+		  case 'Z' =>	startOfLine + "{!}" + endOfLine
 		}
 	}
 	
