@@ -21,16 +21,12 @@ object GroceryListCompiler {
   	
 	def main(args: Array[String]) {
 
-		program = new Program(args);
-		stack = new Stack();
-		helperstack = new Stack(); 
-
 		for (elem:String <- args) {
 
 			try {
 				System.out.println(elem);
-
-				var length:Int = elem.length;
+				var split:Array[String] = elem.split("-");
+				var length:Int = if (split.length == 2) Integer.parseInt(split(1)) else 0;
 
 				execute(elem.charAt(0), length);
 			} catch {
@@ -38,6 +34,7 @@ object GroceryListCompiler {
 			} 
 		}
 		System.out.println(compiledProgram);
+		KarmaExecuter.main(compiledProgram.split("\n"));
 	}
 	
 	// This is where all new code should be made
@@ -48,25 +45,26 @@ object GroceryListCompiler {
 		  case 'B' =>  	compiledProgram += startOfLine(char) + "{[" + endOfLine
 		  case 'C' => 	compiledProgram += startOfLine(char) + "{\\}}" + increaseDequeEnd  + endOfLine
 		  case 'D' => 	compiledProgram += startOfLine(char) + "{[{]/}" + decreaseDequeEnd + endOfLine
-		  case 'E' => 	compiledProgram += startOfLine(char) + "0{!@'1," + decreaseDequeEnd + endOfLine
+		  case 'E' => 	compiledProgram += startOfLineForE(char) + "0'" + decreaseDequeEnd + endOfLine
 		  case 'F' => 	compiledProgram += startOfLine(char) + "{[{]}}" + endOfLine
 		  case 'G' => 	compiledProgram += startOfLine(char) + "{>[}]}" + decreaseDequeEnd + endOfLine
 		  case 'H' => 	// No compiledProgram += startOfLine + "67+2*>\\[[}]\\{{]@-}!@#[1]@<{$FINISH" + decreaseDequeEnd
 		  case 'I' => 	compiledProgram += startOfLine(char) + "?}" + increaseDequeEnd  + endOfLine
 		  case 'J' => 	compiledProgram += startOfLine(char) + "{,<" + decreaseDequeEnd
 		  case 'K' => 	compiledProgram += startOfLine(char) + "]\\[![1]@,\\@<]-[{#1<" 
-		  case 'L' => 	compiledProgram += "\\!@![1]-\\!@,#" + decreaseDequeEnd + endOfLine
-		  case 'M' => 	compiledProgram += startOfLine(char) + "{{*}" + decreaseDequeEnd + endOfLine
-		  case 'N' => 	compiledProgram += startOfLine(char) + numberToStack(length) + "}" + increaseDequeEnd  + endOfLine
-		  case 'O' => 	compiledProgram += startOfLine(char) + "{;" + decreaseDequeEnd + endOfLine
-		  case 'P' => 	compiledProgram += startOfLine(char) + "{:" + decreaseDequeEnd + endOfLine
+		  case 'L' => 	compiledProgram += startOfLineForL(char) + decreaseDequeEnd + "31-{!@,#" + endOfLine
+		  //case 'L' => 	compiledProgram += startOfLineForL(char) + "\\!@![1]-\\!@,#" + endOfLine
+		  case 'M' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{{*}" + endOfLine
+		  case 'N' => 	compiledProgram += startOfLine(char) + increaseDequeEnd  + numberToStack(length) + "}" + endOfLine
+		  case 'O' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{;" + endOfLine
+		  case 'P' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{:" + endOfLine
 		  case 'Q' => 	compiledProgram += startOfLine(char) + endOfLine
-		  case 'R' => 	compiledProgram += startOfLine(char) + "{\\[[{\\]/*]-}" + decreaseDequeEnd + endOfLine
-		  case 'S' => 	compiledProgram += startOfLine(char) + "{[{]-}" + decreaseDequeEnd + endOfLine
+		  case 'R' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{\\[[{\\]/*]-}" + endOfLine
+		  case 'S' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{[{]-}" + endOfLine
 		  case 'T' => 	compiledProgram += startOfLine(char)
 		  case 'U' => 	compiledProgram += startOfLine(char) + "]{[[" + endOfLine
-		  case 'V' => 	compiledProgram += startOfLine(char) + "10-," + increaseDequeEnd 
-		  case 'W' => 	compiledProgram += startOfLine(char) + "554**}" + increaseDequeEnd  + endOfLine
+		  case 'V' => 	compiledProgram += startOfLine(char) + increaseDequeEnd + "10-," 
+		  case 'W' => 	compiledProgram += startOfLine(char) + increaseDequeEnd  + "554**}" + endOfLine
 		  case 'X' => 	compiledProgram += startOfLine(char) + "{#" + endOfLine
 		  case 'Y' =>	// No
 		  case 'Z' =>	compiledProgram += startOfLine + "{!}" + endOfLine
@@ -75,31 +73,31 @@ object GroceryListCompiler {
 	
 	def convert(char:Char, length:Int):String = {
 		return Character.toUpperCase(char) match {
-		  case 'A' => 	startOfLine(char) + "{{+}" + decreaseDequeEnd + endOfLine
+		  case 'A' => 	startOfLine(char) + decreaseDequeEnd + "{{+}" + endOfLine
 		  case 'B' =>  	startOfLine(char) + "{[" + endOfLine
-		  case 'C' => 	startOfLine(char) + "{\\}}" + increaseDequeEnd  + endOfLine
-		  case 'D' => 	startOfLine(char) + "{[{]/}" + decreaseDequeEnd + endOfLine
-		  case 'E' => 	startOfLine(char) + "0{!@'1," + decreaseDequeEnd + endOfLine
+		  case 'C' => 	startOfLine(char) + increaseDequeEnd  + "{\\}}" + endOfLine
+		  case 'D' => 	startOfLine(char) + decreaseDequeEnd + "{[{]/}" + endOfLine
+		  case 'E' => 	startOfLineForE(char) + "0'" + endOfLine
 		  case 'F' => 	startOfLine(char) + "{[{]}}" + endOfLine
-		  case 'G' => 	startOfLine(char) + "{>[}]}" + decreaseDequeEnd + endOfLine
-		  case 'H' => 	startOfLine(char)// No compiledProgram += startOfLine + "67+2*>\\[[}]\\{{]@-}!@#[1]@<{$FINISH" + decreaseDequeEnd
-		  case 'I' => 	startOfLine(char) + "?}" + increaseDequeEnd  + endOfLine
-		  case 'J' => 	startOfLine(char) + "{,<" + decreaseDequeEnd
+		  case 'G' => 	startOfLine(char) + decreaseDequeEnd + "{>[}]}" + endOfLine
+		  //case 'H' => 	// No startOfLine + "67+2*>\\[[}]\\{{]@-}!@#[1]@<{$FINISH" + decreaseDequeEnd
+		  case 'I' => 	startOfLine(char) + increaseDequeEnd  + "?}" + endOfLine
+		  case 'J' => 	startOfLine(char) + decreaseDequeEnd + "{,<"
 		  case 'K' => 	startOfLine(char) + "]\\[![1]@,\\@<]-[{#1<" 
-		  case 'L' => 	"\\!@![1]-\\!@,#" + decreaseDequeEnd + endOfLine
-		  case 'M' => 	startOfLine(char) + "{{*}" + decreaseDequeEnd + endOfLine
-		  case 'N' => 	startOfLine(char) + numberToStack(length) + "}" + increaseDequeEnd  + endOfLine
-		  case 'O' => 	startOfLine(char) + "{;" + decreaseDequeEnd + endOfLine
-		  case 'P' => 	startOfLine(char) + "{:" + decreaseDequeEnd + endOfLine
+		  case 'L' => 	startOfLineForL(char) + decreaseDequeEnd + "31-{!@,#" + endOfLine
+		  case 'M' => 	startOfLine(char) + decreaseDequeEnd + "{{*}" + endOfLine
+		  case 'N' => 	startOfLine(char) + increaseDequeEnd  + numberToStack(length) + "}" + endOfLine
+		  case 'O' => 	startOfLine(char) + decreaseDequeEnd + "{;" + endOfLine
+		  case 'P' => 	startOfLine(char) + decreaseDequeEnd + "{:" + endOfLine
 		  case 'Q' => 	startOfLine(char) + endOfLine
-		  case 'R' => 	startOfLine(char) + "{\\[[{\\]/*]-}" + decreaseDequeEnd + endOfLine
-		  case 'S' => 	startOfLine(char) + "{[{]-}" + decreaseDequeEnd + endOfLine
+		  case 'R' => 	startOfLine(char) + decreaseDequeEnd + "{\\[[{\\]/*]-}" + endOfLine
+		  case 'S' => 	startOfLine(char) + decreaseDequeEnd + "{[{]-}" + endOfLine
 		  case 'T' => 	startOfLine(char)
 		  case 'U' => 	startOfLine(char) + "]{[[" + endOfLine
-		  case 'V' => 	startOfLine(char) + "10-," + increaseDequeEnd 
-		  case 'W' => 	startOfLine(char) + "554**}" + increaseDequeEnd  + endOfLine
+		  case 'V' => 	startOfLine(char) + increaseDequeEnd + "10-," 
+		  case 'W' => 	startOfLine(char) + increaseDequeEnd  + "554**}" + endOfLine
 		  case 'X' => 	startOfLine(char) + "{#" + endOfLine
-		  case 'Y' =>	startOfLine(char) // No
+		  //case 'Y' =>	// No
 		  case 'Z' =>	startOfLine + "{!}" + endOfLine
 		  case _   =>	startOfLine(char)
 		}
@@ -127,6 +125,14 @@ object GroceryListCompiler {
 	}
 	
 	def startOfLine(ascii:Int):String = {
-		return "\n\\1+!" + numberToStack(ascii) + "}[2+]@,[2]-{#\\!@'[1]-\\!!@,#";
+		return "\n\\3+@,\\1+!" + numberToStack(ascii) + "}[2+]@,[2]-{#\\!@'[1]-\\!!@,#";
+	}
+	
+	def startOfLineForL(ascii:Int):String = {
+		return "\n\\1+!" + numberToStack(ascii) + "}[2+]@,[2]-{#\\!@![1]-\\!!@,#";
+	}
+	
+	def startOfLineForE(ascii:Int):String = {
+		return "\n3+\\@,[3]-\\1+!" + numberToStack(ascii) + "}[2+]@,[2]-{#[1]-\\!!@,#";
 	}
 }

@@ -7,6 +7,8 @@ object LoopDemo extends GroceryListInternal{
     Watermelon
     Lettuce
     Chicken
+    Oatmeal
+    Noodles - 10
     Pasta
     Noodles - 1
     Fruit

@@ -20,6 +20,10 @@ object KarmaExecuter {
 			  case e : OutOfRangeException => System.out.println(e);
 			} 
 			char = program.nextChar;
+			/*System.out.print(char + " - ");
+			System.out.print(stack);
+			System.out.print(" - ");
+			System.out.println(deque);*/
 		}
 	}
 	
