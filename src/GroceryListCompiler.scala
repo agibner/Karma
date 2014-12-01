@@ -42,7 +42,7 @@ object GroceryListCompiler {
 	def execute(char:Char, length:Int) {
 		Character.toUpperCase(char) match {
 		  case 'A' => 	compiledProgram += startOfLine(char) + "{{+}" + decreaseDequeEnd + endOfLine
-		  case 'B' =>  	compiledProgram += startOfLine(char) + "{[" + endOfLine
+		  case 'B' =>  	compiledProgram += startOfLine(char) + "]{[[" + endOfLine
 		  case 'C' => 	compiledProgram += startOfLine(char) + "{\\}}" + increaseDequeEnd  + endOfLine
 		  case 'D' => 	compiledProgram += startOfLine(char) + "{[{]/}" + decreaseDequeEnd + endOfLine
 		  case 'E' => 	compiledProgram += startOfLineForE(char) + "0'" + decreaseDequeEnd + endOfLine
@@ -62,7 +62,7 @@ object GroceryListCompiler {
 		  case 'R' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{\\[[{\\]/*]-}" + endOfLine
 		  case 'S' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{[{]-}" + endOfLine
 		  case 'T' => 	compiledProgram += startOfLine(char)
-		  case 'U' => 	compiledProgram += startOfLine(char) + "]{[[" + endOfLine
+		  case 'U' => 	compiledProgram += startOfLine(char) + "]]}[" + endOfLine
 		  case 'V' => 	compiledProgram += startOfLine(char) + increaseDequeEnd + "10-," 
 		  case 'W' => 	compiledProgram += startOfLine(char) + increaseDequeEnd  + "554**}" + endOfLine
 		  case 'X' => 	compiledProgram += startOfLine(char) + "{#" + endOfLine
@@ -74,7 +74,7 @@ object GroceryListCompiler {
 	def convert(char:Char, length:Int):String = {
 		return Character.toUpperCase(char) match {
 		  case 'A' => 	startOfLine(char) + decreaseDequeEnd + "{{+}" + endOfLine
-		  case 'B' =>  	startOfLine(char) + "{[" + endOfLine
+		  case 'B' =>  	startOfLine(char) + "]{[[" + endOfLine
 		  case 'C' => 	startOfLine(char) + increaseDequeEnd  + "{\\}}" + endOfLine
 		  case 'D' => 	startOfLine(char) + decreaseDequeEnd + "{[{]/}" + endOfLine
 		  case 'E' => 	startOfLineForE(char) + "0'" + endOfLine
