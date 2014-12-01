@@ -10,7 +10,7 @@ object GroceryListExecuter {
   	var value:Int = _; 
   	var val1:Int = _;
   	var val2:Int = _; 
-  	var alphabet:Array[Char] = [null, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
+  	var alphabet:Array[Char] = Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z');
 
 	def main(args: Array[String]) {
 
@@ -98,7 +98,6 @@ object GroceryListExecuter {
 		  case 'S' => 	// Subtracts
 		  				stack.push(stack.pop() - stack.pop()); 
 		  case 'T' => 	// Terminates
-		  				exit(); 
 
 		  case 'U' => 	// Top to bottom? 
 		  				value = stack.pop();
@@ -111,7 +110,7 @@ object GroceryListExecuter {
 		  				}
 		  case 'V' => 	// Value
 		  				var line:Array[Char] = program.nextLine;
-		  				item = line(0);
+		  				var item = line(0);
 		  				stack.push(item)
 		  case 'W' => 	// W?
 		  				stack.push(100); 

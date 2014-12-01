@@ -17,7 +17,7 @@ object KarmaExecuter {
 			} catch {
 			  case e : OutOfRangeException => System.out.println(e);
 			} 
-			char = program.getNext;
+			char = program.nextChar;
 		}
 	}
 	
@@ -37,7 +37,7 @@ object KarmaExecuter {
 		  case '!' => stack.push(if (stack.pop()==0) 1 else 0);
 		  case '=' => stack.push(if (stack.pop() == deque.peekFirst()) 1 else 0);
 		  case '>' => stack.push(if (stack.pop() > deque.peekFirst()) 1 else 0);
-		  case '@' => if (stack.pop() != 1) program.skipNext;
+		  case '@' => if (stack.pop() != 1) program.skipNextChar;
 		  case x:Char if (x>='0' && x<='9') => stack.push(x - '0');
 		  case '}' => deque.addFirst(stack.pop());
 		  case '{' => stack.push(deque.removeFirst());
