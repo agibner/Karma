@@ -82,7 +82,7 @@ object GroceryListCompiler {
 		  case 'E' => 	startOfLine(char) + "0{!@'1," + decreaseDequeEnd + endOfLine
 		  case 'F' => 	startOfLine(char) + "{[{]}}" + endOfLine
 		  case 'G' => 	startOfLine(char) + "{>[}]}" + decreaseDequeEnd + endOfLine
-		  case 'H' => 	""// No compiledProgram += startOfLine + "67+2*>\\[[}]\\{{]@-}!@#[1]@<{$FINISH" + decreaseDequeEnd
+		  case 'H' => 	startOfLine(char)// No compiledProgram += startOfLine + "67+2*>\\[[}]\\{{]@-}!@#[1]@<{$FINISH" + decreaseDequeEnd
 		  case 'I' => 	startOfLine(char) + "?}" + increaseDequeEnd  + endOfLine
 		  case 'J' => 	startOfLine(char) + "{,<" + decreaseDequeEnd
 		  case 'K' => 	startOfLine(char) + "]\\[![1]@,\\@<]-[{#1<" 
@@ -99,8 +99,9 @@ object GroceryListCompiler {
 		  case 'V' => 	startOfLine(char) + "10-," + increaseDequeEnd 
 		  case 'W' => 	startOfLine(char) + "554**}" + increaseDequeEnd  + endOfLine
 		  case 'X' => 	startOfLine(char) + "{#" + endOfLine
-		  case 'Y' =>	"" // No
+		  case 'Y' =>	startOfLine(char) // No
 		  case 'Z' =>	startOfLine + "{!}" + endOfLine
+		  case _   =>	startOfLine(char)
 		}
 	}
 	
