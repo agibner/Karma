@@ -1,6 +1,6 @@
 package groceryinternal
 
-object LoopDemo extends GroceryListInternal{
+object FibDemo extends GroceryListInternal{
   def main(args: Array[String]){
     GROCERY_LIST
 	Noodles - 0
@@ -11,10 +11,6 @@ object LoopDemo extends GroceryListInternal{
 	Noodles - 1
 	Fruit
 	Sriracha
-	Chicken
-	Oatmeal
-	Noodles - 10
-	Pasta
 	Chicken
 	Bananas
 	Chicken
@@ -28,8 +24,6 @@ object LoopDemo extends GroceryListInternal{
 	Fruit
 	Utensils
 	Chicken
-	Chicken
-	Oatmeal
 	Eggs
 	Turkey
     AND_PROBABLY_OTHER_STUFF
