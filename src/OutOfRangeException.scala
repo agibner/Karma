@@ -1,3 +1,5 @@
+package groceryinternal
+
 import scala.util.control.Exception
 
 class OutOfRangeException(above:Boolean, line:Int, position:Int) extends Exception {

@@ -1,3 +1,5 @@
+package groceryinternal
+
 class Program {
 	
 	var codeArray:Array[Array[Char]] = _;
