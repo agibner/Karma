@@ -3,16 +3,23 @@ package groceryinternal
 object LoopDemo extends GroceryListInternal{
   def main(args: Array[String]){
     GROCERY_LIST
-    Watermelon
-    Watermelon
-    Lettuce
+    Noodels - 0
+    Noodels - 1
+    Noodels - 20
     Chicken
-    Oatmeal
-    Noodles - 10
-    Pasta
+    Lettuce
     Noodles - 1
     Fruit
     Sriracha
+    Bananas
+    Chicken
+    Oatmeal
+    Chicken
+    Bananas
+    Apples
+    Utensils
+    Fruit
+    Utensils
     Chicken
     Eggs
     Turkey
