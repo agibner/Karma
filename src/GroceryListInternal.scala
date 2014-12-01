@@ -338,7 +338,7 @@ class GroceryListInternal {
         current += 1
       }
   }
-  object Juice {
+  object Jello {
     def apply(s: Symbol) = {
         current += 1
       }

@@ -28,10 +28,10 @@ object GroceryListCompiler {
 			try {
 				System.out.println(elem);
 
-				var start:Char = Character.toUpperCase(elem(1))
+				var start:Char = Character.toUpperCase(elem.charAt(0))
 				var length:Int = elem.length;
 
-				execute(elem(1), start, length);
+				execute(elem.charAt(0), start, length);
 			} catch {
 			  case e : OutOfRangeException => System.out.println(e);
 			} 
@@ -94,6 +94,6 @@ object GroceryListCompiler {
 	}
 	
 	def startOfLine(ascii:Int):String = {
-		return "\n\\1+!" + numberToStack(ascii) + "}[2+]@,[2]-{#\\!@'[1]-\\!@,#";
+		return "\n\\1+!" + numberToStack(ascii) + "}[2+]@,[2]-{#\\!@'[1]-\\!!@,#";
 	}
 }
