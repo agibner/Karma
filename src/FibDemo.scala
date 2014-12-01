@@ -11,7 +11,6 @@ object FibDemo extends GroceryListInternal{
 	Noodles - 1
 	Fruit
 	Sriracha
-	Chicken
 	Bananas
 	Chicken
 	Oatmeal
