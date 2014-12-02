@@ -9,8 +9,18 @@ object FactorDemo extends GroceryListInternal{
 		Noodles - 48
 		Ibuprofen
 		Sriracha
-		Noodles - 13
+		Noodles - 10
 		Ibuprofen
+		Sriracha
+		Chicken
+		Zucchini
+		Noodles - 3
+		Milk
+		Noodles - 1
+		Apples
+		Juice
+		Noodles - 3
+		Fruit
 		Sriracha
 		Chicken
 		Lettuce
@@ -22,8 +32,18 @@ object FactorDemo extends GroceryListInternal{
 		Milk
 		Utensils
 		Apples
-		Noodles - 13
+		Noodles - 10
 		Ibuprofen
+		Sriracha
+		Chicken
+		Zucchini
+		Noodles - 3
+		Milk
+		Noodles - 1
+		Apples
+		Juice
+		Noodles - 3
+		Fruit
 		Sriracha
 		Chicken
 		Eggs
@@ -93,8 +113,18 @@ Noodles-2
 Noodles-48
 Ibuprofen
 Sriracha
-Noodles-13
+Noodles-10
 Ibuprofen
+Sriracha
+Chicken
+Zucchini
+Noodles-4
+Milk
+Noodles-1
+Apples
+Juice
+Noodles-3
+Fruit
 Sriracha
 Chicken
 Lettuce
@@ -106,8 +136,18 @@ Noodles-10
 Milk
 Utensils
 Apples
-Noodles-13
+Noodles-10
 Ibuprofen
+Sriracha
+Chicken
+Zucchini
+Noodles-3
+Milk
+Noodles-1
+Apples
+Juice
+Noodles-3
+Fruit
 Sriracha
 Chicken
 Eggs
