@@ -1,6 +1,6 @@
 package groceryinternal
 
-object GroceryDemo extends GroceryListInternal{
+object HelloDemo extends GroceryListInternal{
   def main(args: Array[String]){
     GROCERY_LIST
     Noodles - 72
@@ -26,6 +26,8 @@ object GroceryDemo extends GroceryListInternal{
     Noodles - 100
     Pasta
     Noodles - 46
+    Pasta
+    Noodles - 10
     Pasta
     Turkey
     AND_PROBABLY_OTHER_STUFF

@@ -43,57 +43,57 @@ class GroceryListInternal {
   }
   
   def Apples() = {
-    karmaString += GroceryListCompiler.convert('A',7);
+    karmaString += GroceryListCompiler.convert('A',1);
     current += 1
   }
 
 	def Bananas() = {
-	    karmaString += GroceryListCompiler.convert('B',7);
+	    karmaString += GroceryListCompiler.convert('B',1);
 	    current += 1
 	 }
 	
 	def Chicken() = {
-	    karmaString += GroceryListCompiler.convert('C',7);
+	    karmaString += GroceryListCompiler.convert('C',1);
 	    current += 1
 	  }
 	
 	def Dumplings() = {
-	    karmaString += GroceryListCompiler.convert('D',7);
+	    karmaString += GroceryListCompiler.convert('D',1);
 	    current += 1
 	  }
 	
 	def Eggs() = {
-	    karmaString += GroceryListCompiler.convert('E',7);
+	    karmaString += GroceryListCompiler.convert('E',1);
 	    current += 1
 	  }
 	
 	def Fruit() = {
-	    karmaString += GroceryListCompiler.convert('F',7);
+	    karmaString += GroceryListCompiler.convert('F',1);
 	    current += 1
 	  }
 	
 	def Gruyere() = {
-	    karmaString += GroceryListCompiler.convert('G',7);
+	    karmaString += GroceryListCompiler.convert('G',1);
 	    current += 1
 	  }
 	
 	def Ibuprofen() = {
-	    karmaString += GroceryListCompiler.convert('I',7);
+	    karmaString += GroceryListCompiler.convert('I',1);
 	    current += 1
 	  }
 	
 	def Juice() = {
-	    karmaString += GroceryListCompiler.convert('J',7);
+	    karmaString += GroceryListCompiler.convert('J',1);
 	    current += 1
 	  }
 	
 	def Lettuce() = {
-	    karmaString += GroceryListCompiler.convert('L',7);
+	    karmaString += GroceryListCompiler.convert('L',1);
 	    current += 1
 	  }
 	
 	def Milk() = {
-	  karmaString += GroceryListCompiler.convert('M',7);
+	  karmaString += GroceryListCompiler.convert('M',1);
 	  current += 1
 	  }
 	
@@ -105,52 +105,52 @@ class GroceryListInternal {
   	}	
 	
 	def Oatmeal() = {
-	  karmaString += GroceryListCompiler.convert('O',7);
+	  karmaString += GroceryListCompiler.convert('O',1);
 	    current += 1
 	  }
 	
 	def Pasta() = {
-	  karmaString += GroceryListCompiler.convert('P',7);
+	  karmaString += GroceryListCompiler.convert('P',1);
 	    current += 1
 	  }
 	
 	def Rice() = {
-	  karmaString += GroceryListCompiler.convert('R',7);
+	  karmaString += GroceryListCompiler.convert('R',1);
 	    current += 1
 	  }
 	
 	def Sriracha() = {
-	  karmaString += GroceryListCompiler.convert('S',7);
+	  karmaString += GroceryListCompiler.convert('S',1);
 	    current += 1
 	  }
 	
 	def Turkey() = {
-	  karmaString += GroceryListCompiler.convert('T',7);
+	  karmaString += GroceryListCompiler.convert('T',1);
 	    current += 1
 	  }
 	
 	def Utensils() = {
-	  karmaString += GroceryListCompiler.convert('U',7);
+	  karmaString += GroceryListCompiler.convert('U',1);
 	    current += 1
 	  }
 	
 	def Veggies() = {
-	  karmaString += GroceryListCompiler.convert('V',7);
+	  karmaString += GroceryListCompiler.convert('V',1);
 	    current += 1
 	  }
 	
 	def Watermelon() = {
-	    karmaString += GroceryListCompiler.convert('W',7);
+	    karmaString += GroceryListCompiler.convert('W',1);
 	    current += 1
 	  }
 	
 	def Xanax() = {
-	  karmaString += GroceryListCompiler.convert('X',7);
+	  karmaString += GroceryListCompiler.convert('X',1);
 	    current += 1
 	  }
 	
 	def Zucchini() = {
-	  karmaString += GroceryListCompiler.convert('Z',7);
+	  karmaString += GroceryListCompiler.convert('Z',1);
 	    current += 1
 	  }
 }
