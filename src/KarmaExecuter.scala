@@ -59,7 +59,8 @@ class KarmaExecuter {
 		  case ']' => stack.push(deque.removeLast());
 		  case '#' => stack.pop();
 		  case '\\' => stack.push(stack.peek());
-		  case '?' => stack.push(br.read());
+		  //case '?' => stack.push(br.read());
+		  case '?' => stack.push(System.in.read());
 		  case ':' => System.out.print(stack.pop().toChar);
 		  case ';' => System.out.print(stack.pop());
 		  case ',' => program.moveDown; program.moveToFront;
