@@ -3,9 +3,31 @@ package groceryinternal
 object FactorDemo extends GroceryListInternal{
 	def main(args:Array[String]){
 		GROCERY_LIST
-	
 		Noodles - 2
+		
+		//Input a decimal number
+		Noodles - 48
 		Ibuprofen
+		Sriracha
+		Noodles - 13
+		Ibuprofen
+		Sriracha
+		Chicken
+		Lettuce
+		Noodles - 35
+		Fruit
+		Sriracha
+		Bananas
+		Noodles - 10
+		Milk
+		Utensils
+		Apples
+		Noodles - 13
+		Ibuprofen
+		Sriracha
+		Chicken
+		Eggs
+		Xanax
 		
 		Chicken
 		Bananas
@@ -68,7 +90,28 @@ object FactorDemo extends GroceryListInternal{
 }
 /*
 Noodles-2
+Noodles-48
 Ibuprofen
+Sriracha
+Noodles-13
+Ibuprofen
+Sriracha
+Chicken
+Lettuce
+Noodles-35
+Fruit
+Sriracha
+Bananas
+Noodles-10
+Milk
+Utensils
+Apples
+Noodles-13
+Ibuprofen
+Sriracha
+Chicken
+Eggs
+Xanax
 Chicken
 Bananas
 Bananas

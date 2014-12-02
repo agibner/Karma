@@ -1,12 +1,14 @@
 package groceryinternal
 
 import java.util._;
+import java.io._;
 
 class KarmaExecuter {
 	
 	var stack:Stack[Int] = _;
 	var deque:ArrayDeque[Int] = _;
 	var program:Program =  _;
+	var br:BufferedReader = _;
   
 	/*def main(args: Array[String]) {
 		executeProgram(args);
@@ -16,6 +18,7 @@ class KarmaExecuter {
 		program = new Program(args);
 		stack = new Stack();
 		deque = new ArrayDeque();
+		br = new BufferedReader(new InputStreamReader(System.in));
 		var char:Char = program.nextChar;
 		while (char != '\n') {
 			try {
@@ -56,7 +59,7 @@ class KarmaExecuter {
 		  case ']' => stack.push(deque.removeLast());
 		  case '#' => stack.pop();
 		  case '\\' => stack.push(stack.peek());
-		  case '?' => stack.push(scala.io.StdIn.readChar());
+		  case '?' => stack.push(br.read());
 		  case ':' => System.out.print(stack.pop().toChar);
 		  case ';' => System.out.print(stack.pop());
 		  case ',' => program.moveDown; program.moveToFront;
