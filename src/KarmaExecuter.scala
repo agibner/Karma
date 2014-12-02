@@ -2,13 +2,17 @@ package groceryinternal
 
 import java.util._;
 
-object KarmaExecuter {
+class KarmaExecuter {
 	
 	var stack:Stack[Int] = _;
 	var deque:ArrayDeque[Int] = _;
 	var program:Program =  _;
   
-	def main(args: Array[String]) {
+	/*def main(args: Array[String]) {
+		executeProgram(args);
+	}*/
+	
+	def executeProgram(args: Array[String]) {
 		program = new Program(args);
 		stack = new Stack();
 		deque = new ArrayDeque();
@@ -44,6 +48,7 @@ object KarmaExecuter {
 		  case '=' => stack.push(if (stack.pop() == deque.peekFirst()) 1 else 0);
 		  case '>' => stack.push(if (stack.pop() > deque.peekFirst()) 1 else 0);
 		  case '@' => if (stack.pop() != 1) program.skipNextChar;
+		  case '$' => if (stack.pop() != 1) program.skipNextChars;
 		  case x:Char if (x>='0' && x<='9') => stack.push(x - '0');
 		  case '}' => deque.addFirst(stack.pop());
 		  case '{' => stack.push(deque.removeFirst());

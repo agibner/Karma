@@ -44,6 +44,12 @@ class Program {
 		}
 	}
 	
+	def skipNextChars {
+		if (codeArray(currentLine).size != linePositions(currentLine)) {
+			linePositions(currentLine) += 2;
+		}
+	}
+	
 	def nextChar:Char = {
 		if (codeArray(currentLine).size == linePositions(currentLine)) '\n';
 		else {

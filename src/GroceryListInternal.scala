@@ -29,7 +29,8 @@ class GroceryListInternal {
     //lines should be populated with Karma lines or something
     //this should then call karma executor
     gotoLine(lines.keys.toList.sorted.head);
-    KarmaExecuter.main(karmaString.split("\n"));
+    val karmaEx = new KarmaExecuter();
+    karmaEx.executeProgram(karmaString.split("\n"));
   }
   // beginning of program
   def GROCERY_LIST() = {
