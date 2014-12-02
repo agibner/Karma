@@ -30,6 +30,9 @@ class GroceryListInternal {
     //this should then call karma executor
     gotoLine(lines.keys.toList.sorted.head);
     val karmaEx = new KarmaExecuter();
+    System.out.println("\nKarma code:");
+    System.out.println(karmaString);
+    System.out.println("\nProgram:");
     karmaEx.executeProgram(karmaString.split("\n"));
   }
   // beginning of program

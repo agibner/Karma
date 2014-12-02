@@ -38,40 +38,6 @@ object GroceryListCompiler {
 		karmaEx.executeProgram(compiledProgram.split("\n"));
 	}
 	
-	// This is where all new code should be made
-	// This is what reads the char and determines what to do.
-	def execute(char:Char, length:Int) {
-		Character.toUpperCase(char) match {
-		  case 'A' => 	compiledProgram += startOfLine(char) + "{{+}" + decreaseDequeEnd + endOfLine
-		  case 'B' =>  	compiledProgram += startOfLine(char) + "]{[[" + endOfLine
-		  case 'C' => 	compiledProgram += startOfLine(char) + "{\\}}" + increaseDequeEnd  + endOfLine
-		  case 'D' => 	compiledProgram += startOfLine(char) + "{[{]/}" + decreaseDequeEnd + endOfLine
-		  case 'E' => 	compiledProgram += startOfLineForE(char) + "0'" + decreaseDequeEnd + endOfLine
-		  case 'F' => 	compiledProgram += startOfLine(char) + "{[{]}}" + endOfLine
-		  case 'G' => 	compiledProgram += startOfLine(char) + "{>{#}" + decreaseDequeEnd + endOfLine
-		  case 'H' => 	// No compiledProgram += startOfLine + "67+2*>\\[[}]\\{{]@-}!@#[1]@<{$FINISH" + decreaseDequeEnd
-		  case 'I' => 	compiledProgram += startOfLine(char) + "?}" + increaseDequeEnd  + endOfLine
-		  case 'J' => 	compiledProgram += startOfLine(char) + "{,<" + decreaseDequeEnd
-		  case 'K' => 	compiledProgram += startOfLine(char) + "]\\[![1]@,\\@<]-[{#1<" 
-		  case 'L' => 	compiledProgram += startOfLineForL(char) + decreaseDequeEnd + "31-{!@,#" + endOfLine
-		  //case 'L' => 	compiledProgram += startOfLineForL(char) + "\\!@![1]-\\!@,#" + endOfLine
-		  case 'M' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{{*}" + endOfLine
-		  case 'N' => 	compiledProgram += startOfLine(char) + increaseDequeEnd  + numberToStack(length) + "}" + endOfLine
-		  case 'O' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{;" + endOfLine
-		  case 'P' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{:" + endOfLine
-		  case 'Q' => 	compiledProgram += startOfLine(char) + endOfLine
-		  case 'R' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{\\[[{\\]/*]-}" + endOfLine
-		  case 'S' => 	compiledProgram += startOfLine(char) + decreaseDequeEnd + "{[{]-}" + endOfLine
-		  case 'T' => 	compiledProgram += startOfLine(char)
-		  case 'U' => 	compiledProgram += startOfLine(char) + "]]}[" + endOfLine
-		  case 'V' => 	compiledProgram += startOfLine(char) + increaseDequeEnd + "10-," 
-		  case 'W' => 	compiledProgram += startOfLine(char) + increaseDequeEnd  + "554**}" + endOfLine
-		  case 'X' => 	compiledProgram += startOfLine(char) + "{#" + endOfLine
-		  case 'Y' =>	// No
-		  case 'Z' =>	compiledProgram += startOfLine + "{!}" + endOfLine
-		}
-	}
-	
 	def convert(char:Char, length:Int):String = {
 		return Character.toUpperCase(char) match {
 		  case 'A' => 	startOfLine(char) + decreaseDequeEnd + "{{+}" + endOfLine
@@ -81,7 +47,6 @@ object GroceryListCompiler {
 		  case 'E' => 	startOfLineForE(char) + "0'<"
 		  case 'F' => 	startOfLine(char) + "{[{]}}" + endOfLine
 		  case 'G' => 	startOfLine(char) + decreaseDequeEnd + "{>{#}" + endOfLine
-		  //case 'H' => 	// No startOfLine + "67+2*>\\[[}]\\{{]@-}!@#[1]@<{$FINISH" + decreaseDequeEnd
 		  case 'I' => 	startOfLine(char) + increaseDequeEnd  + "?}" + endOfLine
 		  case 'J' => 	startOfLine(char) + decreaseDequeEnd + "{,<"
 		  case 'K' => 	startOfLine(char) + "]\\[![1]$,<\\@<]-[{#1<"
@@ -98,7 +63,6 @@ object GroceryListCompiler {
 		  case 'V' => 	startOfLine(char) + increaseDequeEnd + "10-," 
 		  case 'W' => 	startOfLine(char) + increaseDequeEnd  + "554**}" + endOfLine
 		  case 'X' => 	startOfLine(char) + "{#" + endOfLine
-		  //case 'Y' =>	// No
 		  case 'Z' =>	startOfLine(char) + "{!}" + endOfLine
 		  case _   =>	startOfLine(char)
 		}
