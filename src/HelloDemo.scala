@@ -29,7 +29,8 @@ object HelloDemo extends GroceryListInternal{
     Pasta
     Noodles - 10
     Pasta
-    Turkey
+    a Turtle
+    
     AND_PROBABLY_OTHER_STUFF
   }
 }

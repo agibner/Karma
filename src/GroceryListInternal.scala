@@ -3,13 +3,15 @@ package groceryinternal
 import scala.collection.mutable.{ HashMap, Stack }
 import scala.util.Random
 import scala.math.{ min, max }
+import scala.language.dynamics
 
-class GroceryListInternal {
+class GroceryListInternal extends Dynamic {
 	var karmaString = "";
+	var a = new A();
   
 	// end of the program
 	def AND_PROBABLY_OTHER_STUFF() = {
-		val karmaEx = new KarmaExecuter();
+		val karmaEx = new KarmaExecuter();	
 		System.out.println("\nKarma code:");
 		System.out.println(karmaString);
 		System.out.println("\nProgram:");
@@ -19,6 +21,7 @@ class GroceryListInternal {
 	// beginning of program
 	def GROCERY_LIST() = {
 	    karmaString = "0[1,";
+	    a = new A();
 	}
 	  
 	def Apples() = {
@@ -111,4 +114,23 @@ class GroceryListInternal {
 	  karmaString += GroceryListCompiler.convert('Z',1);
 	}
 	
+	class A extends Dynamic {
+	  def applyDynamic(name:String)(args:Int) = {
+			var f = name.charAt(0);
+			karmaString += GroceryListCompiler.convert(f,args);
+		}
+		
+		def selectDynamic(name:String) = {
+		  var f = name.charAt(0);
+		  karmaString += GroceryListCompiler.convert(f,1);
+		}
+	}
+	def applyDynamic(name:String)(args:Int) = {
+		var f = name.charAt(0);
+		karmaString += GroceryListCompiler.convert(f,args);
+	}
+		def selectDynamic(name:String) = {
+		var f = name.charAt(0);
+		karmaString += GroceryListCompiler.convert(f,1);
+	}
 }
