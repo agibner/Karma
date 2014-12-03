@@ -20,10 +20,17 @@ object KarmaTester {
 		runStackTest("\1\1","??^",0);
 		runStackTest("\0","?!",1);
 		runStackTest("\1","?!",0);
+		runStackTest("\1\2","?#?",2);
+		runStackTest("\1\1","??:",1);
+		runStackTest("\1\1","??;",1);
 		
 		//Deque
 		runDequeTest("1","?}",'1');
 		runDequeTest("1","?[",'1');
+		
+		//Stack and Deque
+		runStackTest("\1\1","?}?=",1);
+		runStackTest("\1\1","?}?>",0);
 	}
 	
 	def runStackTest(data:String,program:String,endStack:Char) {

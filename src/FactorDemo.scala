@@ -107,6 +107,9 @@ object FactorDemo extends GroceryListInternal{
 		
 		Oatmeal
 		
+		Noodles - 10
+        Pasta
+		
 		Turkey
 		AND_PROBABLY_OTHER_STUFF
 	}
