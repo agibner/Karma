@@ -10,7 +10,10 @@ object FactorDemo extends GroceryListInternal{
 		Ibuprofen
 		Sriracha
 		Noodles - 10
-		Ibuprofen
+		
+		//an is also a keyword
+		an Icee
+		
 		Sriracha
 		Chicken
 		Zucchini

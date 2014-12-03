@@ -8,6 +8,8 @@ import scala.language.dynamics
 class GroceryListInternal extends Dynamic {
 	var karmaString = "";
 	var a = new A();
+	var an = new An();
+	var some = new Some();
   
 	// end of the program
 	def AND_PROBABLY_OTHER_STUFF() = {
@@ -22,8 +24,11 @@ class GroceryListInternal extends Dynamic {
 	def GROCERY_LIST() = {
 	    karmaString = "0[1,";
 	    a = new A();
+	    var an = new An();
+	    var some = new Some();
 	}
-	  
+	
+	//Build in Groceries for convenience 
 	def Apples() = {
 	    karmaString += GroceryListCompiler.convert('A',1);
 	}
@@ -114,6 +119,7 @@ class GroceryListInternal extends Dynamic {
 	  karmaString += GroceryListCompiler.convert('Z',1);
 	}
 	
+	// Handle other names for variables
 	class A extends Dynamic {
 	  def applyDynamic(name:String)(args:Int) = {
 			var f = name.charAt(0);
@@ -125,6 +131,32 @@ class GroceryListInternal extends Dynamic {
 		  karmaString += GroceryListCompiler.convert(f,1);
 		}
 	}
+
+		
+	class An extends Dynamic {
+	  def applyDynamic(name:String)(args:Int) = {
+			var f = name.charAt(0);
+			karmaString += GroceryListCompiler.convert(f,args);
+		}
+		
+		def selectDynamic(name:String) = {
+		  var f = name.charAt(0);
+		  karmaString += GroceryListCompiler.convert(f,1);
+		}
+	}
+	
+	class Some extends Dynamic {
+	  def applyDynamic(name:String)(args:Int) = {
+			var f = name.charAt(0);
+			karmaString += GroceryListCompiler.convert(f,args);
+		}
+		
+		def selectDynamic(name:String) = {
+		  var f = name.charAt(0);
+		  karmaString += GroceryListCompiler.convert(f,1);
+		}
+	}
+	
 	def applyDynamic(name:String)(args:Int) = {
 		var f = name.charAt(0);
 		karmaString += GroceryListCompiler.convert(f,args);
