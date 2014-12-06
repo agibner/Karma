@@ -24,7 +24,7 @@ This program treats the numbers as functions, and calls them in the order listed
 We leave understanding how that works as an exercise for the reader.
 
 ## Grocery List ##
-Read up on how to write in Karma on Grocery List: http://esolangs.org/wiki/Grocery_List <br>
+Read up on how to write in Grocery List on Grocery List: http://esolangs.org/wiki/Grocery_List <br>
 our Grocery List is an internal DSL, which compiles to Karma and runs at the end of the block
 
 ###Basics###
